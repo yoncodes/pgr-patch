@@ -2,7 +2,7 @@
 
 ## How to use
 ```bash
-Cargo build --release
+cargo build --release
 ```
 
 - Download and use the shim method [here](https://github.com/Xpl0itR/VersionShim)
