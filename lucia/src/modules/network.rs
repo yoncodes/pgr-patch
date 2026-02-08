@@ -6,8 +6,8 @@ use crate::util::{import, read_csharp_string};
 use anyhow::Result;
 use ilhook::x64::Registers;
 
-const WEB_REQUEST_UTILS_MAKE_INITIAL_URL: usize = 0x43FBCA0;
-const SET_REQUEST_HEADER: usize = 0x43F6A90;
+const WEB_REQUEST_UTILS_MAKE_INITIAL_URL: usize = 0x4d43e50;
+const SET_REQUEST_HEADER: usize = 0x4d3ec40;
 
 static HOST_CSTRING: LazyLock<CString> = LazyLock::new(|| CString::new("127.0.0.1").unwrap());
 
@@ -37,7 +37,7 @@ impl MhyModule for MhyContext<Http> {
     }
 }
 
-import!(il2cpp_string_new(cstr: *const u8) -> usize = 0x4C2420);
+import!(il2cpp_string_new(cstr: *const u8) -> usize = 0x516BF0);
 //import!(il2cpp_string_new_utf16(text: *const u16, len: i32) -> usize = 0x4C25F0);
 
 impl Http {
