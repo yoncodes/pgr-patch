@@ -6,8 +6,8 @@ use crate::util::{import, read_csharp_string};
 use anyhow::Result;
 use ilhook::x64::Registers;
 
-const WEB_REQUEST_UTILS_MAKE_INITIAL_URL: usize = 0x4d43e50;
-const SET_REQUEST_HEADER: usize = 0x4d3ec40;
+const WEB_REQUEST_UTILS_MAKE_INITIAL_URL: usize = 0x54A2F00;
+const SET_REQUEST_HEADER: usize = 0x549DCF0;
 
 static HOST_CSTRING: LazyLock<CString> = LazyLock::new(|| CString::new("127.0.0.1").unwrap());
 
@@ -37,7 +37,7 @@ impl MhyModule for MhyContext<Http> {
     }
 }
 
-import!(il2cpp_string_new(cstr: *const u8) -> usize = 0x516BF0);
+import!(il2cpp_string_new(cstr: *const u8) -> usize = 0x622300);
 //import!(il2cpp_string_new_utf16(text: *const u16, len: i32) -> usize = 0x4C25F0);
 
 impl Http {
@@ -65,7 +65,7 @@ impl Http {
         let base_url = if is_https {
             "https://127.0.0.1:443"
         } else {
-            "http://127.0.0.1:80"
+            "http://127.0.0.1:8080"
         };
 
         // Check if we should redirect

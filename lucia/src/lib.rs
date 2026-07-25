@@ -25,7 +25,7 @@ unsafe fn thread_func() {
     //std::thread::sleep(Duration::from_secs(1));
 
     util::disable_memory_protection();
-    //Console::AllocConsole().unwrap();
+    Console::AllocConsole().unwrap();
 
     println!("Pgr patch\nMade by yoncodes\nTo work with Lucia:");
     println!("Base: {:X}", base);

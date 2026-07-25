@@ -55,7 +55,7 @@ pub unsafe fn show(parent: HWND) {
 
     // Set owner AFTER creation
     if parent.0 != 0 {
-        SetWindowLongPtrW(hwnd, GWLP_HWNDPARENT, parent.0 as isize);
+        SetWindowLongPtrW(hwnd, GWLP_HWNDPARENT, parent.0);
     }
 
     // Dialog size
